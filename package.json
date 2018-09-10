@@ -26,12 +26,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "next",
-    "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-manifest": "next",
-    "gatsby-plugin-offline": "next",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "gatsby": "^2.0.0-rc.15",
+    "gatsby-plugin-manifest": "^2.0.2-rc.1",
+    "gatsby-plugin-offline": "^2.0.0-rc.6",
+    "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
