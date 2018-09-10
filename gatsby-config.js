@@ -5,6 +5,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayout: require.resolve('./src/components/Layout'),
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-live-mdx',
