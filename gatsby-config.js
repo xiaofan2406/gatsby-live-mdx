@@ -1,3 +1,8 @@
+const emotionConfig =
+  process.env.NODE_ENV === 'production'
+    ? { hoist: true }
+    : { sourceMap: true, autoLabel: true };
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Live MDX',
@@ -9,6 +14,10 @@ module.exports = {
       options: {
         defaultLayout: require.resolve('./src/components/Layout'),
       },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: emotionConfig,
     },
     {
       resolve: `gatsby-plugin-manifest`,

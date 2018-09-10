@@ -5,20 +5,10 @@ import { StaticQuery, graphql } from 'gatsby';
 import { css } from 'react-emotion';
 import { MDXProvider } from '@mdx-js/tag';
 
+import { cssPageWidth, headerHeight } from '../styles';
 import Header from './Header';
 import PreComponent from './PreComponent';
-
-const cssLayout = css``;
-
-const cssMain = css`
-  margin-left: 240px;
-`;
-
-const cssMainSection = css`
-  margin: auto;
-  width: 1020px;
-  padding: 36px 72px 72px 72px;
-`;
+import Sidebar from './Sidebar';
 
 function Layout({ children }) {
   return (
@@ -44,13 +34,34 @@ function Layout({ children }) {
           >
             <html lang="en" />
           </Helmet>
-          <div className={cssLayout}>
+          <div
+            className={css`
+              min-height: calc(100vh - 18px);
+              display: flex;
+              flex-direction: column;
+            `}
+          >
             <Header title={siteMetadata.title} />
-            <main className={cssMain}>
+            <div
+              className={css`
+                ${cssPageWidth};
+                margin-top: ${headerHeight}px;
+                flex: 1;
+                display: flex;
+              `}
+            >
+              <Sidebar />
               <MDXProvider components={{ pre: PreComponent }}>
-                <section className={cssMainSection}>{children}</section>
+                <main
+                  className={css`
+                    flex: 1;
+                    padding: 24px 48px;
+                  `}
+                >
+                  {children}
+                </main>
               </MDXProvider>
-            </main>
+            </div>
           </div>
         </>
       )}

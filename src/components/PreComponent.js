@@ -13,6 +13,7 @@ const cssEditor = css`
   width: 480px;
   padding: 24px;
   position: relative;
+  margin: 0;
 `;
 
 const cssPreview = css`
