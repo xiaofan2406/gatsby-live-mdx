@@ -4,4 +4,4 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import './src/assets/reset.css'
+import './src/assets/reset.css';
