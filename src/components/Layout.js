@@ -5,10 +5,10 @@ import { StaticQuery, graphql } from 'gatsby';
 import { css } from 'react-emotion';
 import { MDXProvider } from '@mdx-js/tag';
 
-import { cssPageWidth, headerHeight } from '../styles';
+import { cssPageWidth, headerHeight, sidebarWidth } from '../styles';
 import Header from './Header';
-import PreComponent from './PreComponent';
 import Sidebar from './Sidebar';
+import PreComponent from './PreComponent';
 
 function Layout({ children }) {
   return (
@@ -37,6 +37,7 @@ function Layout({ children }) {
           <div
             className={css`
               min-height: calc(100vh - 18px);
+              min-width: 480px;
               display: flex;
               flex-direction: column;
             `}
@@ -45,22 +46,30 @@ function Layout({ children }) {
             <div
               className={css`
                 ${cssPageWidth};
-                margin-top: ${headerHeight}px;
+                margin: ${headerHeight}px 0 0 ${sidebarWidth}px;
                 flex: 1;
                 display: flex;
               `}
             >
               <Sidebar />
-              <MDXProvider components={{ pre: PreComponent }}>
+              <section
+                className={css`
+                  flex: 1;
+                  padding: 24px;
+                `}
+              >
                 <main
                   className={css`
-                    flex: 1;
-                    padding: 24px 48px;
+                    width: 960px;
+                    min-width: 960px;
+                    margin: auto;
                   `}
                 >
-                  {children}
+                  <MDXProvider components={{ pre: PreComponent }}>
+                    {children}
+                  </MDXProvider>
                 </main>
-              </MDXProvider>
+              </section>
             </div>
           </div>
         </>

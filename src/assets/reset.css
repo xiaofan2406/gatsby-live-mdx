@@ -472,19 +472,3 @@ template {
 [hidden] {
   display: none;
 }
-
-/*******************************
-         Site Overrides
-*******************************/
-
-html {
-  overflow-y: scroll;
-}
-
-h1 {
-  margin-top: 0;
-}
-
-body {
-  color: rgba(0, 0, 0, 0.88);
-}

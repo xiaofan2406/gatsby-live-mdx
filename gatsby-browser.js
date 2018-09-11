@@ -5,3 +5,4 @@
  */
 
 import './src/assets/reset.css';
+import 'prismjs/themes/prism-solarizedlight.css';
