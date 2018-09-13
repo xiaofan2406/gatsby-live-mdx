@@ -5,7 +5,7 @@ const emotionConfig =
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Live MDX',
+    title: 'gatsby-live-mdx',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import Editable from '../components/Editable';
 
 # Hi people
 
@@ -12,11 +13,15 @@ This starter kit features:
 
 Ultimately, it allows you to create website with live editing and syntax highlighting quickly.
 
+<Editable>
+
 ```jsx
 <div>
   <span>Start typing here!</span>
 </div>
 ```
+
+</Editable>
 
 In addition, it also includes
 

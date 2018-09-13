@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { css } from 'react-emotion';
-
-import { sidebarWidth, textColor, themeColor } from '../styles';
+import { sidebarWidth, textColor, themeColor } from '../../styles';
 
 export const cssNavLink = css`
   font-size: 18px;

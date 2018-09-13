@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { css } from 'react-emotion';
-import { headerHeight, cssPageWidth, textColor, themeColor } from '../styles';
+import {
+  headerHeight,
+  cssPageWidth,
+  textColor,
+  themeColor,
+} from '../../styles';
 
 const cssExternalLink = css`
   text-decoration: none;
   color: ${textColor};
+
   &:hover {
     color: ${themeColor};
   }

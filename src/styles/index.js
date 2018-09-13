@@ -10,13 +10,8 @@ export const cssPageWidth = css`
 export const sidebarWidth = 240;
 export const headerHeight = 72;
 
-export const cssHoverableBox = css`
+export const cssBorder = css`
   border: 1px solid #efefef;
-
-  &:hover {
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
-  }
 `;
 
 export const cssCode = css`
@@ -43,6 +38,7 @@ injectGlobal`
 
   pre,
   code {
+    margin: 0;
     background-color: #f5f7f9;
   }
 

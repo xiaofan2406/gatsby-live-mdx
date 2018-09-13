@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { css } from 'react-emotion';
 import { MDXProvider } from '@mdx-js/tag';
 
-import { cssPageWidth, headerHeight, sidebarWidth } from '../styles';
+import SiteMeta from './SiteMeta';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import PreComponent from './PreComponent';
+import { cssPageWidth, headerHeight, sidebarWidth } from '../../styles';
 
 function Layout({ children }) {
   return (
@@ -25,15 +25,7 @@ function Layout({ children }) {
     >
       {({ site: { siteMetadata } }) => (
         <>
-          <Helmet
-            title={siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
+          <SiteMeta {...siteMetadata} />
           <div
             className={css`
               min-height: calc(100vh - 18px);

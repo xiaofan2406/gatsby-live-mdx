@@ -1,13 +1,21 @@
 # react-live
 
-You can configure `react-live` in `src/components/PreComponent`;
+You can configure `react-live` in `src/components/Layout/CodeDisplay`;
 
-By default any block code with valid language specified will be editable.
+By default block code are not editable.
 
-You can choose to render a non-editable block by suffixing `-static`, e.g.
+You can choose to render an editable block wrapping with `<Editable>` component, e.g.
 
-```jsx-static
-<div>
-  <span>Not editable!</span>
-</div>
+````jsx
+import Editable from '../components/Editable';
+
+#### Editable
+
+<Editable>
+
+```jsx
+// code here will be editable
 ```
+
+</Editable>
+````
