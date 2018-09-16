@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Editable({ children }) {
+function Editor({ children, disableEdit }) {
   const child = React.Children.only(children);
 
   return React.cloneElement(child, {
     children: {
       ...child.props.children,
+      // All the props there will be received by CodeDisplay
       props: {
         ...child.props.children.props,
-        editable: true,
+        showEditor: !disableEdit,
+        ehllo: 'tru',
       },
     },
   });
 }
 
-Editable.propTypes = {
+Editor.propTypes = {
   children: PropTypes.node.isRequired,
+  disableEdit: PropTypes.bool,
 };
 
-export default Editable;
+Editor.defaultProps = {
+  disableEdit: false,
+};
+
+export default Editor;

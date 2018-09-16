@@ -45,12 +45,12 @@ const cssError = css`
   padding: 12px;
 `;
 
-function CodeDisplay({ code, editable, addon }) {
+function CodeDisplay({ code, showEditor, previewAddon }) {
   return (
     <LiveProvider
       code={code}
       mountStylesheet={false}
-      className={cx({ [cssLive]: editable })}
+      className={cx({ [cssLive]: showEditor })}
     >
       <div
         className={css`
@@ -59,28 +59,30 @@ function CodeDisplay({ code, editable, addon }) {
         `}
       >
         <LiveEditor
-          contentEditable={editable}
-          className={cx(cssEditor, { [cssEditable]: editable })}
+          contentEditable={showEditor}
+          className={cx(cssEditor, { [cssEditable]: showEditor })}
         />
-        <div className={cssDisplay}>
-          {editable ? <LivePreview /> : null}
-          {addon}
-        </div>
+        {showEditor ? (
+          <div className={cssDisplay}>
+            <LivePreview />
+            {previewAddon}
+          </div>
+        ) : null}
       </div>
-      {editable ? <LiveError className={cssError} /> : null}
+      {showEditor ? <LiveError className={cssError} /> : null}
     </LiveProvider>
   );
 }
 
 CodeDisplay.propTypes = {
   code: PropTypes.string.isRequired,
-  editable: PropTypes.bool,
-  addon: PropTypes.node,
+  showEditor: PropTypes.bool,
+  previewAddon: PropTypes.node,
 };
 
 CodeDisplay.defaultProps = {
-  editable: false,
-  addon: null,
+  showEditor: false,
+  previewAddon: null,
 };
 
 export default CodeDisplay;

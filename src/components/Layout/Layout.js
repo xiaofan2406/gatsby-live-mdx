@@ -58,7 +58,8 @@ function Layout({ children }) {
                   `}
                 >
                   <MDXProvider components={{ pre: PreComponent }}>
-                    {children}
+                    {/* remove the extra div wrapping */}
+                    <>{children.props.children}</>
                   </MDXProvider>
                 </main>
               </section>
