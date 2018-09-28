@@ -11,7 +11,7 @@ export const sidebarWidth = 240;
 export const headerHeight = 72;
 
 export const cssBorder = css`
-  border: 1px solid #efefef;
+  border: 1px solid #e8e8e8;
 `;
 
 export const cssCode = css`
@@ -39,7 +39,7 @@ injectGlobal`
   pre,
   code {
     margin: 0;
-    background-color: #f5f7f9;
+    background-color: #e8e8e8;
   }
 
   code {
