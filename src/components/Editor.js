@@ -11,7 +11,6 @@ function Editor({ children, disableEdit }) {
       props: {
         ...child.props.children.props,
         showEditor: !disableEdit,
-        ehllo: 'tru',
       },
     },
   });
