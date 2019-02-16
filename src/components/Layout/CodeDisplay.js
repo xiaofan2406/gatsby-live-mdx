@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css, cx } from 'react-emotion';
+import { css } from '@emotion/core';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { cssCode, cssBorder } from '../../styles';
 
@@ -50,26 +50,26 @@ function CodeDisplay({ code, showEditor, previewAddon }) {
     <LiveProvider
       code={code}
       mountStylesheet={false}
-      className={cx({ [cssLive]: showEditor })}
+      css={css(showEditor && cssLive)}
     >
       <div
-        className={css`
+        css={css`
           display: flex;
           flex-wrap: wrap;
         `}
       >
         <LiveEditor
           contentEditable={showEditor}
-          className={cx(cssEditor, { [cssEditable]: showEditor })}
+          css={css([cssEditor, showEditor && cssEditable])}
         />
         {showEditor ? (
-          <div className={cssDisplay}>
+          <div css={cssDisplay}>
             <LivePreview />
             {previewAddon}
           </div>
         ) : null}
       </div>
-      {showEditor ? <LiveError className={cssError} /> : null}
+      {showEditor ? <LiveError css={cssError} /> : null}
     </LiveProvider>
   );
 }

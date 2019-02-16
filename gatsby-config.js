@@ -1,8 +1,3 @@
-const emotionConfig =
-  process.env.NODE_ENV === 'production'
-    ? { hoist: true }
-    : { sourceMap: true, autoLabel: true };
-
 module.exports = {
   siteMetadata: {
     title: 'gatsby-live-mdx',
@@ -10,18 +5,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-mdx`,
+      resolve: 'gatsby-mdx',
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayout: require.resolve('./src/components/Layout'),
       },
     },
+    'gatsby-plugin-emotion',
     {
-      resolve: `gatsby-plugin-emotion`,
-      options: emotionConfig,
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-live-mdx',
         short_name: 'starter',

@@ -47,13 +47,12 @@
     "trailingComma": "es5"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "@mdx-js/mdx": "^0.17.5",
     "@mdx-js/tag": "^0.17.5",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
     "gatsby": "^2.1.4",
     "gatsby-mdx": "^0.3.6",
-    "gatsby-plugin-emotion": "^2.0.5",
+    "gatsby-plugin-emotion": "^4.0.3",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-react-helmet": "^3.0.6",
@@ -61,9 +60,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
-    "react-live": "^1.11.0"
+    "react-live": "^1.12.0"
   },
   "devDependencies": {
     "eslint": "^5.14.0",

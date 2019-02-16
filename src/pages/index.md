@@ -25,5 +25,5 @@ Ultimately, it allows you to create website with live editing and syntax highlig
 
 In addition, it also includes
 
-- [`react-emotion`](https://emotion.sh/docs/introduction)
+- [`emotion`](https://github.com/emotion-js/emotion)
 - [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)

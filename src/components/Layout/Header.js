@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import {
   headerHeight,
   cssPageWidth,
@@ -21,7 +21,7 @@ const cssExternalLink = css`
 function Header({ title }) {
   return (
     <header
-      className={css`
+      css={css`
         ${cssPageWidth};
         position: fixed;
         top: 0;
@@ -37,7 +37,7 @@ function Header({ title }) {
       `}
     >
       <h1
-        className={css`
+        css={css`
           margin: 0;
         `}
       >
@@ -49,7 +49,7 @@ function Header({ title }) {
         href="https://github.com/xiaofan2406/gatsby-live-mdx"
         target="_blank"
         rel="noopener noreferrer"
-        className={cssExternalLink}
+        css={cssExternalLink}
       >
         Github
       </a>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import { sidebarWidth, textColor, themeColor } from '../../styles';
 
 export const cssNavLink = css`
@@ -15,17 +15,19 @@ export const cssNavLink = css`
     color: ${themeColor};
     border-right: 4px solid ${themeColor};
   }
+
+  &.active {
+    color: ${themeColor};
+    border-right: 4px solid ${themeColor};
+  }
 `;
 
-export const cssActiveNavLink = css`
-  color: ${themeColor};
-  border-right: 4px solid ${themeColor};
-`;
+export const cssActiveNavLink = css``;
 
 function Sidebar() {
   return (
     <aside
-      className={css`
+      css={css`
         min-width: ${sidebarWidth}px;
         width: ${sidebarWidth}px;
         position: fixed;
@@ -36,28 +38,20 @@ function Sidebar() {
       `}
     >
       <nav
-        className={css`
+        css={css`
           flex: 1;
           display: flex;
           flex-direction: column;
           margin-top: 12px;
         `}
       >
-        <Link to="/" className={cssNavLink} activeClassName={cssActiveNavLink}>
+        <Link to="/" css={cssNavLink} activeClassName="active">
           Home
         </Link>
-        <Link
-          to="/mdx"
-          className={cssNavLink}
-          activeClassName={cssActiveNavLink}
-        >
+        <Link to="/mdx" css={cssNavLink} activeClassName="active">
           MDX
         </Link>
-        <Link
-          to="/react-live"
-          className={cssNavLink}
-          activeClassName={cssActiveNavLink}
-        >
+        <Link to="/react-live" css={cssNavLink} activeClassName="active">
           React Live
         </Link>
       </nav>
