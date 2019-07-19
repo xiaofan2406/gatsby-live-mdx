@@ -15,7 +15,7 @@ module.exports = {
     },
   },
   plugins: ['react'],
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   rules: {
     'no-console': 0,
     'global-require': 0,
