@@ -4,7 +4,7 @@ import CodeDisplay from './CodeDisplay';
 
 function PreComponent({ children }) {
   const { children: code, ...rest } = children.props;
-  return <CodeDisplay code={code} {...rest} />;
+  return <CodeDisplay code={code.trim()} {...rest} />;
 }
 
 PreComponent.propTypes = {

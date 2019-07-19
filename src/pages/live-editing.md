@@ -1,4 +1,4 @@
-# react-live
+# Live Editing
 
 You can configure `react-live` in `src/components/CodeDisplay`;
 
@@ -18,4 +18,4 @@ You can choose to render an editable block wrapping with `<Editor>` component, e
 </Editor>
 ````
 
-You can change the behavior or add new flags by editing `Editor` component.
+You can change the behavior by modifying `Editor` component.

@@ -1,26 +1,39 @@
-# Hi people
+# Gatsby Live MDX
 
-Welcome to your new Gatsby site.
+This gatsby template allows you to
 
-This starter kit features:
+- create website with live code editing and
 
-- [`react-live`](https://github.com/FormidableLabs/react-live)
-- [`gatsby-mdx`](https://github.com/ChristopherBiscardi/gatsby-mdx)
-- [`prismjs`](https://prismjs.com)
+- code syntax highlighting.
 
-Ultimately, it allows you to create website with live editing and syntax highlighting quickly.
+## Install
+
+Make sure that you have the Gatsby CLI program installed:
+
+```
+yarn global add gatsby-cli
+```
+
+And run from your terminal:
+
+```bash
+gatsby new gatsby-live-mdx-example https://github.com/xiaofan2406/gatsby-live-mdx
+```
+
+## Demo
 
 <Editor>
 
 ```jsx
-<div>
-  <span>Start typing here!</span>
-</div>
+() => {
+  const message = 'Start typing!';
+
+  return (
+    <div>
+      <span>{message}</span>
+    </div>
+  );
+};
 ```
 
 </Editor>
-
-In addition, it also includes
-
-- [`emotion`](https://github.com/emotion-js/emotion)
-- [`reset.css`](https://github.com/Semantic-Org/Semantic-UI/blob/master/dist/components/reset.css)

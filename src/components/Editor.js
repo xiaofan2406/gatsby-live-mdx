@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Editor({ children, disableEdit }) {
+function Editor({ children, noEdit, noInline }) {
   const child = React.Children.only(children);
 
   return React.cloneElement(child, {
@@ -10,7 +10,8 @@ function Editor({ children, disableEdit }) {
       // All the props there will be received by CodeDisplay
       props: {
         ...child.props.children.props,
-        showEditor: !disableEdit,
+        editable: !noEdit,
+        noInline,
       },
     },
   });
@@ -18,11 +19,13 @@ function Editor({ children, disableEdit }) {
 
 Editor.propTypes = {
   children: PropTypes.node.isRequired,
-  disableEdit: PropTypes.bool,
+  noEdit: PropTypes.bool,
+  noInline: PropTypes.bool,
 };
 
 Editor.defaultProps = {
-  disableEdit: false,
+  noEdit: false,
+  noInline: false,
 };
 
 export default Editor;

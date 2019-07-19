@@ -10,6 +10,7 @@ export const cssNavLink = css`
   padding: 6px 24px;
   color: ${textColor};
   position: relative;
+  z-index: 2;
 
   &:hover {
     color: ${themeColor};
@@ -48,11 +49,11 @@ function Sidebar() {
         <Link to="/" css={cssNavLink} activeClassName="active">
           Home
         </Link>
-        <Link to="/mdx" css={cssNavLink} activeClassName="active">
-          MDX
+        <Link to="/live-editing" css={cssNavLink} activeClassName="active">
+          Live Editing
         </Link>
-        <Link to="/react-live" css={cssNavLink} activeClassName="active">
-          React Live
+        <Link to="/references" css={cssNavLink} activeClassName="active">
+          References
         </Link>
       </nav>
     </aside>

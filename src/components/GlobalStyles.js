@@ -14,16 +14,9 @@ function GlobalStyles() {
         }
         body {
           color: ${textColor};
+          font-size: 16px;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        pre,
-        code {
-          margin: 0;
-          background-color: #e8e8e8;
-        }
-        code {
-          padding: 2px 4px;
         }
       `}
     />

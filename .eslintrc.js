@@ -24,7 +24,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'react/sort-comp': 0,
     'react/jsx-filename-extension': 0, // enforce all .js extension
-    'react/prefer-stateless-function': 0,
+    'react/require-default-props': 0,
     'react/jsx-one-expression-per-line': 0, // prettier takes care of it
     'react/jsx-wrap-multilines': 0, // prettier takes care of it
     'react/destructuring-assignment': 0, // cannot init state with props
