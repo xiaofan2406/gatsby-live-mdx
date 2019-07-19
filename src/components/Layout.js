@@ -2,14 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { css } from '@emotion/core';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 
 import SiteMeta from './SiteMeta';
 import Header from './Header';
 import GlobalStyles from './GlobalStyles';
 import Sidebar from './Sidebar';
 import PreComponent from './PreComponent';
-import { cssPageWidth, headerHeight, sidebarWidth } from '../../styles';
+import Editor from './Editor';
+import { cssPageWidth, headerHeight, sidebarWidth } from '../styles';
+
+const components = {
+  pre: PreComponent,
+  Editor,
+};
 
 function Layout({ children }) {
   return (
@@ -59,10 +65,7 @@ function Layout({ children }) {
                     margin: auto;
                   `}
                 >
-                  <MDXProvider components={{ pre: PreComponent }}>
-                    {/* remove the extra div wrapping */}
-                    <>{children.props.children}</>
-                  </MDXProvider>
+                  <MDXProvider components={components}>{children}</MDXProvider>
                 </main>
               </section>
             </div>

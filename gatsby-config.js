@@ -5,10 +5,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
-        defaultLayout: require.resolve('./src/components/Layout'),
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout.js'),
+        },
       },
     },
     'gatsby-plugin-emotion',

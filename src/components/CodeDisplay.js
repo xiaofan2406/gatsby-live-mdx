@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { cssCode, cssBorder } from '../../styles';
+import { cssCode, cssBorder } from '../styles';
 
 const cssLive = css`
   margin-bottom: 24px;
@@ -51,6 +51,7 @@ function CodeDisplay({ code, showEditor, previewAddon }) {
       code={code}
       mountStylesheet={false}
       css={css(showEditor && cssLive)}
+      disabled={!showEditor}
     >
       <div
         css={css`
@@ -58,10 +59,7 @@ function CodeDisplay({ code, showEditor, previewAddon }) {
           flex-wrap: wrap;
         `}
       >
-        <LiveEditor
-          contentEditable={showEditor}
-          css={css([cssEditor, showEditor && cssEditable])}
-        />
+        <LiveEditor css={css([cssEditor, showEditor && cssEditable])} />
         {showEditor ? (
           <div css={cssDisplay}>
             <LivePreview />

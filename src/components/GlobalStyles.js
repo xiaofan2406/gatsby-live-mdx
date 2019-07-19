@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, Global } from '@emotion/core';
-import { textColor } from '../../styles';
+import { textColor } from '../styles';
 
 function GlobalStyles() {
   return (

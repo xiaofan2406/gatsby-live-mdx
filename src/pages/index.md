@@ -1,6 +1,3 @@
-import { Link } from 'gatsby';
-import Editor from '../components/Editor';
-
 # Hi people
 
 Welcome to your new Gatsby site.

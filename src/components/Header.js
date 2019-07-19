@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core';
-import {
-  headerHeight,
-  cssPageWidth,
-  textColor,
-  themeColor,
-} from '../../styles';
+import { headerHeight, cssPageWidth, textColor, themeColor } from '../styles';
 
 const cssExternalLink = css`
   text-decoration: none;
