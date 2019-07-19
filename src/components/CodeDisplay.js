@@ -74,13 +74,13 @@ const cssCopyAction = css`
 
 const cssPreviewPane = css`
   flex: 1;
-  padding: 1em;
   display: flex;
   flex-direction: column;
   position: relative;
 `;
 
 const cssError = css`
+  margin: 0;
   color: #ff1717;
   font-size: 12px;
   padding: 1em 2em;
@@ -90,13 +90,20 @@ const cssError = css`
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
 `;
 
 function CodeDisplay({ code, editable, className, noInline }) {
   const language = className.replace('language-', '');
   const textareaId = 'live-editor-textarea';
   const editorPaneRef = React.useRef();
+
+  const handleCopy = () => {
+    if (editorPaneRef.current) {
+      const textarea = editorPaneRef.current.querySelector(`#${textareaId}`);
+      safeCopy(textarea);
+    }
+  };
 
   return (
     <LiveProvider code={code} disabled={!editable} noInline={noInline}>
@@ -108,18 +115,7 @@ function CodeDisplay({ code, editable, className, noInline }) {
             theme={theme}
             textareaId={textareaId}
           />
-          <button
-            css={cssCopyAction}
-            type="button"
-            onClick={() => {
-              if (editorPaneRef.current) {
-                const textarea = editorPaneRef.current.querySelector(
-                  `#${textareaId}`
-                );
-                safeCopy(textarea);
-              }
-            }}
-          >
+          <button css={cssCopyAction} type="button" onClick={handleCopy}>
             Copy
           </button>
         </div>
