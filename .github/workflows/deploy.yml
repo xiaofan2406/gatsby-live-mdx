@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build gatsby assets
+        run: yarn build
+
+      - name: Deploy to surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'gatsby-live-mdx.surge.sh'
+          project: './public'
+          login: ${{ secrets.surge_email }}
+          token: ${{ secrets.surge_token }}
