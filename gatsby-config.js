@@ -8,11 +8,26 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/Layout.js'),
+          default: require.resolve('./src/components/Layout'),
         },
       },
     },
-    'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('tailwindcss'),
+          require('postcss-preset-env')({ stage: 0 }),
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        tailwind: true,
+        develop: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
