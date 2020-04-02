@@ -7,8 +7,8 @@ function SiteMeta({ title }) {
     <Helmet
       title={title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Gatsby live mdx starter template' },
+        { name: 'keywords', content: 'gatsby, react-live, mdx' },
       ]}
     >
       <html lang="en" />

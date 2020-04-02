@@ -4,5 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import './src/assets/reset.css';
+import './src/styles/main.css';
 import 'prismjs/themes/prism-solarizedlight.css';

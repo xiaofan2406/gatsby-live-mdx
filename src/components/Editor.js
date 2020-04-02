@@ -19,7 +19,11 @@ function Editor({ children, noEdit, noInline }) {
 
 Editor.propTypes = {
   children: PropTypes.node.isRequired,
+
+  /* Disable live editing and preview. Used for syntax highlighting */
   noEdit: PropTypes.bool,
+
+  /* react-live `noInline` prop. Use when render is complex with multiple components */
   noInline: PropTypes.bool,
 };
 

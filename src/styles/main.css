@@ -1,0 +1,40 @@
+/* purgecss start ignore */
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+h1 {
+  @apply font-bold text-3xl mb-12;
+}
+h2 {
+  @apply font-bold text-2xl my-8;
+}
+h3 {
+  @apply font-bold text-xl my-6;
+}
+h4 {
+  @apply font-bold text-lg my-4;
+}
+h5 {
+  @apply font-bold mb-4;
+}
+p {
+  @apply mb-4;
+}
+ul {
+  @apply list-disc pl-6;
+}
+code {
+  @apply bg-gray-700 text-white py-1 px-2 rounded text-sm font-mono;
+}
+
+@font-face {
+  font-family: 'SFMono-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/SFMono-Regular.otf) format('otf');
+}
+/* purgecss end ignore */
+
+@import 'tailwindcss/utilities';
